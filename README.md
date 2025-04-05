@@ -4,8 +4,8 @@ designed for memecraft 2
 worth everything, yet nothing
 
 ## installation
-install neoforge 1.21.1
-copy memecoins-x.x.x.jar to your minecraft install folder (%appdata%/.minecraft/mods)
+install neoforge 1.21.1  
+copy memecoins-x.x.x.jar to your minecraft install folder (%appdata%/.minecraft/mods)  
 play!
 
 ## credits
