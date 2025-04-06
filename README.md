@@ -8,6 +8,13 @@ install neoforge 1.21.1
 copy memecoins-x.x.x.jar to your minecraft install folder (%appdata%/.minecraft/mods)  
 play!
 
+## how to use
+currently, the memecoins are only obtainable through the creative menu or with /give <player> memecoins:memecoin  
+
+## roadmap
+- stores
+- functioning economy
+
 ## credits
 neoforged team for their amazing mod template generator  
 gemma nighy for helping me use this godforsaken language (java)  
