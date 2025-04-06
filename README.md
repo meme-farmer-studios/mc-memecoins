@@ -11,5 +11,7 @@ play!
 ## credits
 neoforged team for their amazing mod template generator  
 gemma nighy for helping me use this godforsaken language (java)
+chad pierce-turing for planning the memeconomy
+cody plott for doing the heavy lifting (coding trade logic)
 
 copyright © [meme farmer studios](https://www.memefarmerstudios.com) / [meme farmer hamish](https://www.memefarmerhamish.com) 2025 - a registered New Zealand business
