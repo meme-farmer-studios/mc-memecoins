@@ -8,12 +8,10 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -40,16 +38,11 @@ public class memecoins
 
     public static final DeferredItem<Item> MEMECOIN = ITEMS.registerSimpleItem("memecoin", new Item.Properties().stacksTo(65));
 
-    public static final DeferredHolder<Block, Block> MEME_SHOP_BLOCK = BLOCKS.register("meme_shop_block", () -> new MemeShopBlock(BlockBehaviour.Properties.of().strength(2.5F)));
-
-    public static final DeferredItem<Item> MEME_SHOP_BLOCK_ITEM = ITEMS.register("meme_shop_block", () -> new BlockItem(MEME_SHOP_BLOCK.get(), new Item.Properties().stacksTo(64)));
-
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CURRENCY_TAB = CREATIVE_MODE_TABS.register("currency", () -> CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup.currency")) // Corrected the tab name to 'Currency'
+            .title(Component.translatable("itemGroup.currency"))
             .icon(() -> MEMECOIN.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 output.accept(MEMECOIN.get());
-                output.accept(MEME_SHOP_BLOCK_ITEM.get());
             }).build());
 
     public memecoins(IEventBus modEventBus, ModContainer modContainer)
