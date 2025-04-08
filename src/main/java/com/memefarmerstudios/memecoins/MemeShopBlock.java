@@ -22,14 +22,14 @@ public class MemeShopBlock extends Block {
         super(properties);
     }
 
-    @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    public InteractionResult onUse(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        System.out.println("MemeShopBlock: onUse method invoked.");
         if (level.isClientSide) {
-            System.out.println("MemeShopBlock: Right-click detected on client side.");
+            player.displayClientMessage(Component.literal("Right-click detected on client side."), true);
             return InteractionResult.SUCCESS;
         }
 
-        System.out.println("MemeShopBlock: Right-click detected on server side.");
+        player.displayClientMessage(Component.literal("Right-click detected on server side."), true);
 
         if (player.isCreative()) {
             // Creative mode: Set the trade item
