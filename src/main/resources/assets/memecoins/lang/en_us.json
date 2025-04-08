@@ -1,4 +1,5 @@
 {
   "itemGroup.currency": "Currency",
-  "item.memecoins.memecoin": "memecoin"
+  "item.memecoins.memecoin": "memecoin",
+  "block.memecoins.meme_shop_block": "meme shop block"
 }
