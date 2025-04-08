@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "memecoins:block/meme_shop_block"
+  }
+}
