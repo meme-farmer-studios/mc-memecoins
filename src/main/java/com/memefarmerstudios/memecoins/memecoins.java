@@ -12,6 +12,9 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.commands.CommandDispatcher;
+import net.minecraft.commands.CommandSourceStack;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -21,11 +24,14 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.fml.event.lifecycle.FMLServerStartingEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import com.memefarmerstudios.memecoins.entities.ShopkeeperEntity;
+import com.memefarmerstudios.memecoins.commands.MemecoinsCommand;
 
 @Mod(memecoins.MODID)
 public class memecoins
@@ -35,6 +41,7 @@ public class memecoins
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(Registries.BLOCK, MODID);
+    public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(Registries.ENTITY_TYPE, MODID);
 
     public static final DeferredItem<Item> MEMECOIN = ITEMS.registerSimpleItem("memecoin", new Item.Properties().stacksTo(65));
 
@@ -45,13 +52,17 @@ public class memecoins
                 output.accept(MEMECOIN.get());
             }).build());
 
+    public static final DeferredHolder<EntityType<?>, EntityType<ShopkeeperEntity>> SHOPKEEPER = ENTITIES.register("shopkeeper", () -> (EntityType<ShopkeeperEntity>) ShopkeeperEntity.SHOPKEEPER);
+
     public memecoins(IEventBus modEventBus, ModContainer modContainer)
     {
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::onServerStarting);
 
         ITEMS.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);
         BLOCKS.register(modEventBus);
+        ENTITIES.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
 
@@ -68,6 +79,11 @@ public class memecoins
         LOGGER.info(Config.magicNumberIntroduction + Config.magicNumber);
 
         Config.items.forEach((item) -> LOGGER.info("ITEM >> {}", item.toString()));
+    }
+
+    private void onServerStarting(FMLServerStartingEvent event) {
+        CommandDispatcher<CommandSourceStack> dispatcher = event.getServer().getCommands().getDispatcher();
+        MemecoinsCommand.register(dispatcher);
     }
 
     @SubscribeEvent
