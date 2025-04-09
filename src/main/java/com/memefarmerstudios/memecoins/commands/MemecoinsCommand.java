@@ -8,8 +8,8 @@ import net.minecraft.commands.Commands;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.phys.Vec3;
+import com.memefarmerstudios.memecoins.memecoins;
 
 public class MemecoinsCommand {
 
@@ -35,8 +35,8 @@ public class MemecoinsCommand {
         Vec3 lookDirection = player.getLookAngle();
         BlockPos spawnPos = BlockPos.containing(player.getX() + lookDirection.x, player.getY(), player.getZ() + lookDirection.z);
 
-        // Spawn the ShopkeeperEntity
-        ShopkeeperEntity shopkeeper = new ShopkeeperEntity(ShopkeeperEntity.SHOPKEEPER, level);
+        // Use the already-registered EntityType for ShopkeeperEntity
+        ShopkeeperEntity shopkeeper = new ShopkeeperEntity(memecoins.SHOPKEEPER.get(), level);
         shopkeeper.setPos(spawnPos.getX() + 0.5, spawnPos.getY(), spawnPos.getZ() + 0.5);
         shopkeeper.setYRot(player.getYRot()); // Face the player
         level.addFreshEntity(shopkeeper);

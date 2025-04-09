@@ -18,6 +18,9 @@ public class ShopkeeperEntity extends Mob {
             .sized(0.6F, 1.8F) // Default player size
             .build("shopkeeper");
 
+    // Removed the static block with `setRegistryName` as it is no longer supported.
+    // EntityType registration is now handled directly in `memecoins.java`.
+
     public ShopkeeperEntity(EntityType<? extends Mob> type, Level level) {
         super(type, level);
     }
