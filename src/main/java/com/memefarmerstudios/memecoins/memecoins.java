@@ -1,36 +1,16 @@
 package com.memefarmerstudios.memecoins;
 
-import com.memefarmerstudios.memecoins.commands.MemecoinsCommand;
-import com.memefarmerstudios.memecoins.entities.ShopkeeperEntity;
 import com.mojang.logging.LogUtils;
-
-import net.minecraft.client.Minecraft;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobCategory;
-
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.server.ServerStartingEvent;
-import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
-
 import org.slf4j.Logger;
 
 @Mod(memecoins.MODID)
@@ -40,61 +20,13 @@ public class memecoins {
 
     // === Deferred Registers ===
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(Registries.BLOCK, MODID);
-    public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(Registries.ENTITY_TYPE, MODID);
 
     // === Items ===
-    public static final DeferredItem<Item> MEMECOIN = ITEMS.registerSimpleItem("memecoin", new Item.Properties().stacksTo(64)); // Max allowed is 64!
-
-    // === Creative Tab ===
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CURRENCY_TAB = CREATIVE_MODE_TABS.register("currency", () -> CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup.currency"))
-            .icon(() -> MEMECOIN.get().getDefaultInstance())
-            .displayItems((parameters, output) -> {
-                output.accept(MEMECOIN.get());
-            }).build());
-
-    // === Entity Registration ===
-    public static final DeferredHolder<EntityType<?>, EntityType<ShopkeeperEntity>> SHOPKEEPER =
-            ENTITIES.register("shopkeeper", () -> EntityType.Builder.<ShopkeeperEntity>of(ShopkeeperEntity::new, MobCategory.MISC)
-                    .sized(0.6F, 1.8F)
-                    .build("memecoins:shopkeeper")); // Use a valid string for the registry name
+    public static final DeferredItem<Item> MEMECOIN = ITEMS.registerSimpleItem("memecoin", new Item.Properties().stacksTo(64));
 
     // === Constructor ===
     public memecoins(IEventBus modEventBus, ModContainer modContainer) {
-        modEventBus.addListener(this::commonSetup);
-        modEventBus.addListener(ClientModEvents::onClientSetup);
-
         ITEMS.register(modEventBus);
-        CREATIVE_MODE_TABS.register(modEventBus);
-        BLOCKS.register(modEventBus);
-        ENTITIES.register(modEventBus);
-
-        NeoForge.EVENT_BUS.register(this);
-
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
-    }
-
-    // === Common Setup ===
-    private void commonSetup(final FMLCommonSetupEvent event) {
-        LOGGER.info("HELLO FROM COMMON SETUP");
-
-        if (Config.logDirtBlock)
-            LOGGER.info("DIRT BLOCK >> {}", BuiltInRegistries.BLOCK.getKey(Blocks.DIRT));
-
-        LOGGER.info(Config.magicNumberIntroduction + Config.magicNumber);
-
-        Config.items.forEach(item -> LOGGER.info("ITEM >> {}", item.toString()));
-    }
-
-    // === Server Starting ===
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
-        LOGGER.info("HELLO from server starting");
-
-        // Register custom commands
-        MemecoinsCommand.register(event.getServer().getCommands().getDispatcher());
     }
 
     // === Client Events ===
@@ -103,7 +35,6 @@ public class memecoins {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             LOGGER.info("HELLO FROM CLIENT SETUP");
-            LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
         }
     }
 }
