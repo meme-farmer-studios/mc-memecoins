@@ -3,6 +3,10 @@ custom coin item for minecraft java edition 1.21.1
 designed for memecraft 2  
 worth everything, yet nothing  
 
+## building from source
+u need jdk 21 (probably have to adjust where runtime is i dont fucking know)  
+"gradlew.bat build" should take care of the rest
+
 ## installation
 install neoforge 1.21.1  
 copy memecoins-x.x.x.jar to your minecraft install folder (%appdata%/.minecraft/mods)  
