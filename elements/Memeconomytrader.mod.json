@@ -1,0 +1,16 @@
+{
+  "_fv": 77,
+  "_type": "villagerprofession",
+  "definition": {
+    "displayName": "memeconomy trader",
+    "pointOfInterest": {
+      "value": "CUSTOM:Memeshop"
+    },
+    "actionSound": {
+      "value": "block.amethyst_block.chime"
+    },
+    "hat": "Full",
+    "professionTextureFile": "villager.png",
+    "zombifiedProfessionTextureFile": "zombified_villager.png"
+  }
+}

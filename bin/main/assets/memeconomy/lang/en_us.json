@@ -1,0 +1,6 @@
+{
+  "item.memeconomy.memecoin": "memecoin",
+  "item_group.memeconomy.memeconomy": "memeconomy",
+  "block.memeconomy.memeshop": "memeshop trader block",
+  "entity.minecraft.villager.memeconomy.memeconomytrader": "memeconomy trader"
+}

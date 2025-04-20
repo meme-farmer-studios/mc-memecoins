@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "memeconomy:block/shop",
+    "particle": "memeconomy:block/shop"
+  },
+  "render_type": "cutout_mipped"
+}
