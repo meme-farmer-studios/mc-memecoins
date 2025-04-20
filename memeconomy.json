@@ -1,105 +1,24 @@
 {
-    "item_values": {
-      "minecraft:dirt": {
-        "amount_required": 128,
-        "reward": 1,
-        "max_daily_sell": 512
-      },
-      "minecraft:oak_log": {
-        "amount_required": 16,
-        "reward": 2,
-        "max_daily_sell": 128
-      },
-      "minecraft:coal": {
-        "amount_required": 8,
-        "reward": 3,
-        "max_daily_sell": 64
-      },
-      "minecraft:iron_ingot": {
-        "amount_required": 4,
-        "reward": 5,
-        "max_daily_sell": 40
-      },
-      "minecraft:gold_ingot": {
-        "amount_required": 4,
-        "reward": 8,
-        "max_daily_sell": 32
-      },
-      "minecraft:diamond": {
-        "amount_required": 1,
-        "reward": 15,
-        "max_daily_sell": 10
-      },
-      "minecraft:emerald": {
-        "amount_required": 1,
-        "reward": 12,
-        "max_daily_sell": 10
-      },
-      "minecraft:redstone": {
-        "amount_required": 16,
-        "reward": 2,
-        "max_daily_sell": 128
-      },
-      "minecraft:lapis_lazuli": {
-        "amount_required": 8,
-        "reward": 4,
-        "max_daily_sell": 64
-      },
-      "minecraft:netherite_scrap": {
-        "amount_required": 1,
-        "reward": 25,
-        "max_daily_sell": 4
-      },
-      "minecraft:bread": {
-        "amount_required": 8,
-        "reward": 3,
-        "max_daily_sell": 32
-      },
-      "minecraft:cooked_beef": {
-        "amount_required": 4,
-        "reward": 5,
-        "max_daily_sell": 40
-      },
-      "minecraft:potato": {
-        "amount_required": 32,
-        "reward": 1,
-        "max_daily_sell": 128
-      },
-      "minecraft:baked_potato": {
-        "amount_required": 32,
-        "reward": 0,
-        "max_daily_sell": 128
-      },
-      "minecraft:sugar_cane": {
-        "amount_required": 32,
-        "reward": 1,
-        "max_daily_sell": 128
-      },
-      "minecraft:bamboo": {
-        "amount_required": 64,
-        "reward": 0,
-        "max_daily_sell": 256
-      },
-      "minecraft:rotten_flesh": {
-        "amount_required": 64,
-        "reward": 0,
-        "max_daily_sell": 256
-      },
-      "minecraft:end_crystal": {
-        "amount_required": 1,
-        "reward": 30,
-        "max_daily_sell": 2
-      },
-      "minecraft:enchanted_book": {
-        "amount_required": 1,
-        "reward": 10,
-        "max_daily_sell": 5
-      },
-      "minecraft:ghast_tear": {
-        "amount_required": 1,
-        "reward": 18,
-        "max_daily_sell": 5
-      }
-    }
+  "item_values": {
+    "minecraft:dirt": { "amount_required": 64, "reward": 1, "max_daily_sell": 10 },
+    "minecraft:oak_log": { "amount_required": 16, "reward": 2, "max_daily_sell": 10 },
+    "minecraft:coal": { "amount_required": 8, "reward": 2, "max_daily_sell": 10 },
+    "minecraft:iron_ingot": { "amount_required": 4, "reward": 3, "max_daily_sell": 10 },
+    "minecraft:gold_ingot": { "amount_required": 4, "reward": 4, "max_daily_sell": 10 },
+    "minecraft:diamond": { "amount_required": 1, "reward": 6, "max_daily_sell": 10 },
+    "minecraft:emerald": { "amount_required": 1, "reward": 5, "max_daily_sell": 10 },
+    "minecraft:redstone": { "amount_required": 16, "reward": 2, "max_daily_sell": 10 },
+    "minecraft:lapis_lazuli": { "amount_required": 8, "reward": 2, "max_daily_sell": 10 },
+    "minecraft:netherite_scrap": { "amount_required": 1, "reward": 10, "max_daily_sell": 4 },
+    "minecraft:bread": { "amount_required": 8, "reward": 2, "max_daily_sell": 10 },
+    "minecraft:cooked_beef": { "amount_required": 4, "reward": 3, "max_daily_sell": 10 },
+    "minecraft:potato": { "amount_required": 32, "reward": 1, "max_daily_sell": 10 },
+    "minecraft:baked_potato": { "amount_required": 32, "reward": 1, "max_daily_sell": 10 },
+    "minecraft:sugar_cane": { "amount_required": 32, "reward": 1, "max_daily_sell": 10 },
+    "minecraft:bamboo": { "amount_required": 64, "reward": 1, "max_daily_sell": 10 },
+    "minecraft:rotten_flesh": { "amount_required": 64, "reward": 1, "max_daily_sell": 10 },
+    "minecraft:end_crystal": { "amount_required": 1, "reward": 15, "max_daily_sell": 2 },
+    "minecraft:enchanted_book": { "amount_required": 1, "reward": 6, "max_daily_sell": 5 },
+    "minecraft:ghast_tear": { "amount_required": 1, "reward": 8, "max_daily_sell": 5 }
   }
-  
+}
