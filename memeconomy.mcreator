@@ -1,0 +1,98 @@
+{
+  "mod_elements": [
+    {
+      "name": "Memecoin",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "memecoin",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/memeconomy/models/item/memecoin.json",
+          "src/main/java/net/memefarmerstudios/memeconomy/item/MemecoinItem.java"
+        ]
+      }
+    },
+    {
+      "name": "Memeconomy",
+      "type": "tab",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "memeconomy",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "Memeshop",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "memeshop",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/memeconomy/blockstates/memeshop.json",
+          "src/main/resources/assets/memeconomy/models/block/memeshop.json",
+          "src/main/resources/data/memeconomy/loot_table/blocks/memeshop.json",
+          "src/main/java/net/memefarmerstudios/memeconomy/block/MemeshopBlock.java",
+          "src/main/resources/assets/memeconomy/models/item/memeshop.json"
+        ]
+      }
+    },
+    {
+      "name": "Memeconomytrader",
+      "type": "villagerprofession",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "memeconomytrader",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/memeconomy/textures/entity/villager/profession/memeconomytrader.png.mcmeta"
+        ]
+      }
+    },
+    {
+      "name": "Memeconomytrade",
+      "type": "villagertrade",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "memeconomytrade",
+      "metadata": {
+        "files": []
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "tag_elements": {},
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {
+      "item.memeconomy.memecoin": "memecoin",
+      "item_group.memeconomy.memeconomy": "memeconomy",
+      "block.memeconomy.memeshop": "memeshop trader block",
+      "entity.minecraft.villager.memeconomy.memeconomytrader": "memeconomy trader"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "memeconomy",
+    "modName": "memeconomy",
+    "version": "2.0.1",
+    "description": "the greatest economy of all time",
+    "author": "meme farmer hamish",
+    "websiteURL": "https://www.memefarmerstudios.com",
+    "license": "Not specified",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "neoforge-1.21.1",
+    "modElementsPackage": "net.memefarmerstudios.memeconomy"
+  },
+  "mcreatorVersion": 202500113416
+}
